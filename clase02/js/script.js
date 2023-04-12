@@ -39,16 +39,16 @@
 // let lados = prompt('INGRESE CANTIDAD DE LADOS');
 
 // parseamos a un número entero
-let lados = parseInt(prompt('INGRESE CANTIDAD DE LADOS'));
+// let lados = parseInt(prompt('INGRESE CANTIDAD DE LADOS'));
 
-for (let index = 1; index <= lados; index++) {
-	if (index > 3) {
-		alert('La figura geométrica tiene más de 3 lados por lo que no es un Tríángulo');
-		break; // podemos utilizar el break si una vez comprobado que no es un triangulo, si deseamos salir del bucle for para que no nos muestre constantemente la alerta
-	}
+// for (let index = 1; index <= lados; index++) {
+// 	if (index > 3) {
+// 		alert('La figura geométrica tiene más de 3 lados por lo que no es un Tríángulo');
+// 		break; // podemos utilizar el break si una vez comprobado que no es un triangulo, si deseamos salir del bucle for para que no nos muestre constantemente la alerta
+// 	}
 
-	alert('lado: ' + index);
-}
+// 	alert('lado: ' + index);
+// }
 
 // ¿Qué tiene que hacer este código?
 // El código recorre con un ciclo for y ejecuta su bloque de código mientras la condición index < lados sea verdadera(true)
@@ -61,9 +61,57 @@ for (let index = 1; index <= lados; index++) {
 
 // Desafíos complementarios
 // Actividad 01:
-// Crea un algoritmo que le pida al usuario que ingrese un número y luego evalúe si ese
-// número es par o impar.
+// Crea un algoritmo que le pida al usuario que ingrese un número y luego evalúe si ese número es par o impar.
+// Para determinar si un número es par o impar el número debe de ser divisible por 2
+
+// let nummero = Number(prompt('Introduzca un numero'));
+
+// if (nummero % 2 == 0) {
+// 	console.log('El número ' + nummero + ' es par.');
+// } else {
+// 	console.log('El número ' + nummero + ' es impar.');
+// }
 
 // Actividad 02:
 // Crea un algoritmo que le pida al usuario un número y luego utiliza while para evaluar
 // cuántos números son pares y cuantos impares, hasta que el usuario ingrese "salir".
+
+alert('Ingrese un número para determinar si es par o impar. Mostraremos un lista de los mismo al finalizar.');
+
+let salir = '',
+	cantidadPares = 0,
+	cantidadImpares = 0,
+	listaNumerosPares = '',
+	listaNumerosImpares = '';
+
+let nummero2 = Number(prompt('Introduzca un numero'));
+
+while (salir !== 'salir') {
+	if (nummero2 % 2 == 0) {
+		cantidadPares++;
+		listaNumerosPares += nummero2.toString() + ', ';
+	} else {
+		cantidadImpares++;
+		listaNumerosImpares += nummero2.toString() + ', ';
+	}
+
+	salir = prompt('Ingrese la palabra "salir" y presione el botón aceptar si desea salir del programa. En caso contrario presione cancelar');
+
+	if (salir !== 'salir') {
+		nummero2 = Number(prompt('Introduzca un nuevo numero'));
+	}
+}
+
+if (cantidadPares !== 0) {
+	console.log('Cantidad de números Pares: ' + cantidadPares);
+	console.log('Lista de números Pares: ' + listaNumerosPares.substring(0, listaNumerosPares.length - 2));
+} else {
+	console.log('No existen números pares.\n');
+}
+
+if (cantidadImpares !== 0) {
+	console.log('Cantidad de números Impares: ' + cantidadImpares);
+	console.log('Lista de números Impares: ' + listaNumerosImpares.substring(0, listaNumerosImpares.length - 2));
+} else {
+	console.log('No existen números impares.');
+}
