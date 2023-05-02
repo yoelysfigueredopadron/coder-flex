@@ -162,4 +162,79 @@ const puntos = [40, 100, 1, 5, 25, 10];
 // Ordena de forma descendente los números utilizando una arrow function =>
 puntos.sort((a, b) => b - a);
 
-console.log(puntos);
+// console.log(puntos);
+
+// Objetos literales
+// const producto = { id: 1, nombre: 'arroz', precio: 90 };
+
+// console.log(producto);
+// console.log('Id:', producto.id);
+// console.log('Nombre:', producto.nombre);
+// console.log('Precio:', producto.precio);
+
+// función constructora de objetos
+// function Producto(id, nombre, precio) {
+// 	this.id = id;
+// 	this.nombre = nombre;
+// 	this.precio = precio;
+// }
+
+// creamos un objeto Producto
+// const producto1 = new Producto(1, 'arroz', 90);
+// const producto2 = new Producto(2, 'pan', 30);
+// const producto3 = new Producto(3, 'agua', 50);
+// const producto4 = new Producto(4, 'porotos', 60);
+// const producto5 = new Producto(5, 'carne', 200);
+
+// console.log(producto1);
+// console.log(producto1.id);
+// console.log(producto1.nombre);
+// console.log(producto1.precio);
+
+class Producto {
+	constructor(id, nombre, precio) {
+		this.id = id;
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+
+	// Metodo sumarIva
+	sumarIva() {
+		this.precio = Number((this.precio * 1.21).toFixed(2));
+	}
+}
+
+const arregloProductos = [];
+// console.log(arregloProductos);
+
+// creando objetos con la clase producto
+arregloProductos.push(new Producto(1, 'arroz', 90));
+arregloProductos.push(new Producto(2, 'pan', 30));
+arregloProductos.push(new Producto(3, 'agua', 50));
+arregloProductos.push(new Producto(4, 'porotos', 60));
+arregloProductos.push(new Producto(5, 'carne', 200));
+// console.log(arregloProductos);
+
+// for ... of ejecuta un bucle sobre un objeto iterable (Arrays, Strings, etc)
+for (const producto of arregloProductos) {
+	producto.sumarIva();
+}
+
+// console.log(arregloProductos);
+
+const sumarIva = precio => Number((precio * 1.21).toFixed(2));
+
+const productos = [
+	{ id: 1, nombre: 'arroz', precio: 90 },
+	{ id: 2, nombre: 'pan', precio: 30 },
+	{ id: 3, nombre: 'agua', precio: 50 },
+	{ id: 4, nombre: 'porotos', precio: 60 },
+	{ id: 5, nombre: 'carne', precio: 200 }
+];
+
+console.log(productos);
+
+for (const producto of productos) {
+	producto.precio = sumarIva(producto.precio);
+	console.log(producto);
+}

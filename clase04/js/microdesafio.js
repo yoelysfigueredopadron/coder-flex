@@ -4,8 +4,8 @@ const ingresarDatos = () => prompt('Ingrese el nombre del producto');
 
 const mensaje = (texto, producto, error = false) => {
 	if (error) {
-		alert(texto + producto + "', el mismo ya está existente dentro de la lista de productos o puede que haya ingresado un valor no válido.");
-		console.error(texto + producto + "', el mismo ya está existente dentro de la lista de productos o puede que haya ingresado un valor no válido.");
+		alert(texto + producto + "', el mismo ya está existente dentro de la lista de productos o puede haber ingresado un valor no válido.");
+		console.error(texto + producto + "', el mismo ya está existente dentro de la lista de productos o puede haber ingresado un valor no válido.");
 	} else {
 		alert(texto + "'" + producto + "'");
 	}
@@ -17,6 +17,11 @@ const agregarProducto = () => {
 
 	while (confirmacion) {
 		producto = ingresarDatos();
+
+		if (producto !== null) {
+			producto = producto.trim().toLowerCase();
+		}
+
 		console.log(producto);
 
 		if (!productos.includes(producto) && producto !== null && producto !== '') {
