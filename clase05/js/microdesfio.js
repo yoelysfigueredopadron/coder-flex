@@ -1,5 +1,8 @@
 const producto = {},
 	productos = [];
+let total = 0;
+
+// console.log({ producto, productos });
 
 class Producto {
 	static id = 0;
@@ -12,11 +15,11 @@ class Producto {
 	}
 
 	subtotalPorProducto() {
-		this.subtotal = this.precio * this.cantidad;
+		this.subtotal = this.cantidad * this.precio;
 	}
 
 	agregarIva() {
-		this.precio = Number((this.precio * 1.21).toFixed());
+		this.precio = Number((this.precio * 1.21).toFixed(2));
 	}
 }
 
@@ -27,7 +30,7 @@ const modificarCantidad = (masCantidad) => {
 		cantidad = Number(prompt('Ingrese la cantidad de productos que desea'));
 
 		while (cantidad <= 0 || isNaN(cantidad)) {
-			alert('Error, debe ingresar un valor valido para cantidad de productos (1 o más) :');
+			alert('Error, debe ingresar un valor válido para cantidad de productos (1 o más) :');
 			cantidad = Number(prompt('Ingrese la cantidad de productos que desea'));
 		}
 
@@ -44,38 +47,40 @@ const modificarCantidad = (masCantidad) => {
 };
 
 const validarNombreProducto = (nombre) => {
-	nombre = prompt('Ingrese nombre del producto: ');
+	nombre = prompt('Ingrese nombre del producto');
 
 	while (nombre === null || nombre.trim() === '') {
 		alert('Error, debe ingresar un nombre de producto');
-		nombre = prompt('Ingrese nombre del producto: ');
+		nombre = prompt('Ingrese nombre del producto');
 	}
 
-	nombre = nombre.toLowerCase();
-
-	return nombre;
+	return (nombre = nombre.toLowerCase());
 };
 
 const validarPrecioProducto = (precio) => {
 	precio = Number(prompt('Ingrese precio del producto'));
 
 	while (isNaN(precio) || precio <= 0) {
-		alert('Error, ingresar un precio válido para producto');
+		alert('Error, debe ingresar un precio válido para el producto');
 		precio = Number(prompt('Ingrese precio del producto'));
 	}
 
 	return precio;
 };
 
-const agregarPropiedades = (nombre, precio, cantidad) => {
-	// agregamos propiedades de forma dinámica
-	producto.nombre = nombre; // producto['nombre'] = nombre;
-	producto.precio = precio; // producto['precio'] = precio;
-	producto.cantidad = cantidad; // producto['cantidad'] = cantidad;
+const agregarPropiedas = (nombre, precio, cantidad) => {
+	// agregamos las propiedades de forma dinámica
+	// producto.nombre = nombre;
+	// producto.precio = precio;
+	// producto.cantidad = cantidad;
+
+	producto['nombre'] = nombre;
+	producto['precio'] = precio;
+	producto['cantidad'] = cantidad;
 };
 
 const ingresarDatos = () => {
-	let nombre, precio, cantidad, subtotal, masCantidad;
+	let nombre, precio, cantidad, masCantidad;
 
 	nombre = validarNombreProducto(nombre);
 	console.log({ nombre });
@@ -89,7 +94,7 @@ const ingresarDatos = () => {
 	cantidad = modificarCantidad(masCantidad);
 	console.log({ cantidad });
 
-	agregarPropiedades(nombre, precio, cantidad);
+	agregarPropiedas(nombre, precio, cantidad);
 	console.log(producto);
 
 	productos.push(new Producto(producto));
@@ -101,18 +106,88 @@ const iniciar = () => {
 
 	while (confirmacion) {
 		ingresarDatos();
-		confirmacion = confirm('¿Desea continiuar ingresando productos?');
+		confirmacion = confirm('¿Desea continuar ingresando productos?');
 	}
 
-	// actualizamos el precio de los producto con el iva y el subtotal
+	// actualizamos el precio de los productos con el iva y el subtotal
 	for (const producto of productos) {
 		producto.agregarIva();
 		producto.subtotalPorProducto();
+		total += producto.subtotal;
+		console.log({ total });
 	}
 
 	console.log(productos);
-
-	console.log('Muchas gracias por usar nuestra aplicación. :)');
+	console.log(`El total de los productos a pagar es $${total}`);
+	console.log('Muchas gracias por usar nuestra aplicación');
 };
 
-iniciar();
+// iniciar();
+
+// storage y JSON
+// métodos de localStorage y sessionStorage -> setItem(), getItem(), removeItem(), clear()
+// métodos JSON stringifity() y parse()
+
+// guardando informacición en localstorage y sessionstorage con setItem()
+// localStorage.setItem('texto', 'Esto es una cadena de texto');
+// localStorage.setItem('numero', 100);
+// localStorage.setItem('aprobado', true);
+// sessionStorage.setItem('texto', 'Esto es una cadena de texto');
+// sessionStorage.setItem('numero', 100);
+// sessionStorage.setItem('aprobado', true);
+
+// recuperamos valores de localstorage y sessionstorage con getItem()
+// let cadena = localStorage.getItem('texto');
+// let numero = Number(localStorage.getItem('numero'));
+// let aprobado = localStorage.getItem('aprobado') === 'true';
+// let cadena2 = sessionStorage.getItem('texto');
+// let numero2 = Number(sessionStorage.getItem('numero'));
+// let aprobado2 = sessionStorage.getItem('aprobado') === 'true';
+
+// console.log({ cadena });
+// console.log('cadena ->', typeof cadena);
+// console.log({ numero });
+// console.log('numero ->', typeof numero);
+// console.log({ aprobado });
+// console.log('aprobado ->', typeof aprobado);
+
+// console.log({ cadena2 });
+// console.log(typeof cadena2);
+// console.log({ numero2 });
+// console.log(typeof numero2);
+// console.log({ aprobado2 });
+// console.log(typeof aprobado2);
+
+// Eliminar un valor de localstorage y sessionstorage con el método removeItem()
+// localStorage.removeItem('numero');
+// localStorage.removeItem('texto');
+// localStorage.removeItem('aprobado');
+// sessionStorage.removeItem('numero');
+// sessionStorage.removeItem('texto');
+// sessionStorage.removeItem('aprobado');
+
+// eliminar todos los valores de localstorage y sessionstorage con el método clear()
+// localStorage.clear();
+// sessionStorage.clear();
+
+// guardando objetos en formato JSON (JavaScript Object Notation)
+const objeto = { nombre: 'Juan', edad: 50 };
+
+// localStorage.setItem('miObjeto', objeto); // object Object
+localStorage.setItem('miObjeto', JSON.stringify(objeto)); // parseamos de objeto a JSON
+
+// const miObjeto = localStorage.getItem('miObjeto'); // formato JSON
+// const miObjeto = JSON.parse(localStorage.getItem('miObjeto')); parseamosde JSON a objeto
+
+// console.log(miObjeto);
+
+const array = [5, 6, 7, 8];
+
+// localStorage.setItem('miArray', array); // guarda el array como texto
+localStorage.setItem('miArray', JSON.stringify(array)); // pasea el array de objeto a JSON
+
+// const miArray = localStorage.getItem('miArray');
+const miArray = JSON.parse(localStorage.getItem('miArray'));
+
+console.log(miArray);
+console.log(typeof miArray);
