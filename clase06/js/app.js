@@ -1,3 +1,61 @@
+// repaso de contenidos localstorage, sessionStorage setItem(), getItem(), removeItem(), clear()
+//JSON.Stringify() y JSON.parse()
+
+localStorage.setItem('clave', 'valor de la clave guardada en localstorage');
+
+const claveLS = localStorage.getItem('clave');
+// console.log({ claveLS });
+
+const hamburguesa = {
+    nombre: 'Hamburguesa clásica',
+    ingredientes: ['pan', 'carne', 'queso', 'lechuga', 'tomate', 'cebolla'],
+    precio: 1000,
+    esVegetariana: false,
+};
+
+// console.log(hamburguesa);
+
+localStorage.setItem('hamburguesa', JSON.stringify(hamburguesa));
+
+const miHamburguesa = JSON.parse(localStorage.getItem('hamburguesa'));
+
+// console.log(miHamburguesa);
+
+const hamburguesas = [
+    {
+        nombre: 'Hamburguesa clásica',
+        ingredientes: ['pan', 'carne', 'queso', 'lechuga', 'tomate', 'cebolla'],
+        precio: 1000,
+        esVegetariana: false,
+    },
+    {
+        nombre: 'Hamburguesa vegetariana',
+        ingredientes: ['pan', 'falafel', 'queso', 'lechuga', 'tomate', 'cebolla'],
+        precio: 700,
+        esVegetariana: true,
+    },
+    {
+        nombre: 'Hamburguesa doble',
+        ingredientes: ['pan', 'doble carne', 'queso', 'lechuga', 'tomate', 'cebolla'],
+        precio: 1200,
+        esVegetariana: false,
+    },
+];
+
+// console.log(hamburguesas);
+
+localStorage.setItem('hamburguesas', JSON.stringify(hamburguesas));
+
+const misHamburguesas = JSON.parse(localStorage.getItem('hamburguesas'));
+
+// console.log(misHamburguesas);
+
+// localStorage.removeItem('clave');
+// localStorage.removeItem('hamburguesa');
+// localStorage.removeItem('hamburguesas');
+
+// localStorage.clear();
+
 function mayorQue(n) {
     return (m) => m > n;
 }
@@ -137,7 +195,7 @@ const precioActualizado = cursos2.map((curso) => {
     };
 });
 
-console.log(precioActualizado);
+// console.log(precioActualizado);
 
 const total = cursos2.reduce((total, curso) => total + curso.precio, 0);
 // console.log(total);
@@ -157,4 +215,4 @@ cursos2.forEach((curso) => {
     grupos[rangoPrecio].push(curso);
 });
 
-console.log(grupos);
+// console.log(grupos);
