@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/app.js" defer></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- ejemplos DOM -->
+        <h1 id="titulo">Título</h1>
+        <p class="parrafo">Este es un párrafo de ejemplo.</p>
+        <p class="parrafo">Este es un párrafo de ejemplo.</p>
+        <p class="parrafo">Este es un párrafo de ejemplo.</p>
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+
+        <!-- ejemplos eventos -->
+        <input type="text" id="myInput" placeholder="Ingrese texto aquí ..." />
+
+        <h3>Formulario de ejemplo</h3>
+
+        <div>
+            <form id="myForm">
+                <label for="fname">Nombre</label>
+                <input type="text" id="fname" name="firstname" placeholder="Ingrese su nombre ..." />
+
+                <label for="lname">Apellido</label>
+                <input type="text" id="lname" name="lastname" placeholder="Ingrese su apellido ..." />
+
+                <label for="country">País</label>
+                <select id="country" name="country">
+                    <option disabled selected hidden value="">Seleccione un país</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="chile">Chile</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="españa">España</option>
+                </select>
+
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
+    </body>
+</html>
