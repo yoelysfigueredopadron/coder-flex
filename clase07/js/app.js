@@ -3,7 +3,7 @@
 // Obtener el elemento por su ID y cambiar su contenido
 let tituloElemento = document.getElementById('titulo');
 // console.log(tituloElemento);
-tituloElemento.innerHTML = 'Nuevo Título';
+// tituloElemento.innerHTML = 'Nuevo Título';
 
 // Obtener elementos por su clase y cambiar su contenido
 let parrafosElemento = document.getElementsByClassName('parrafo');
@@ -21,7 +21,7 @@ for (let i = 0; i < elementosLista.length; i++) {
 }
 
 // Añadir una clase a un elemento
-tituloElemento.className = 'highlight';
+// tituloElemento.className = 'highlight';
 
 // Crear un nuevo elemento y agregarlo al DOM
 let nuevoElemento = document.createElement('p');
@@ -46,6 +46,48 @@ let todosLosParrafos = document.querySelectorAll('p');
 
 // console.log(primerParrafo);
 // console.log(todosLosParrafos);
+
+// Creando elementos desde objetos
+const productos = [
+    { id: 1, nombre: 'Arroz', precio: 125, img: 'arroz.jpg' },
+    { id: 2, nombre: 'Fideo', precio: 70, img: 'fideos.jpg' },
+    { id: 3, nombre: 'Pan', precio: 50, img: 'pan.jpg' },
+    { id: 4, nombre: 'Flan', precio: 100, img: 'flan.jpg' },
+];
+
+console.log(productos);
+
+function renderizarProductos() {
+    let listaProductos = document.createElement('ol'); // div
+
+    for (const producto of productos) {
+        let objProducto = document.createElement('li'); // p
+        // objProducto.innerHTML = JSON.stringify(producto);
+        objProducto.innerHTML = `ID: ${producto.id} | Nombre: ${producto.nombre} | Precio: $${producto.precio}`;
+        listaProductos.append(objProducto);
+    }
+
+    // alert(JSON.stringify(productos));
+    document.body.append(listaProductos);
+}
+
+function renderizarProductos2() {
+    for (const producto of productos) {
+        let card = document.createElement('div');
+        card.classList.add('card');
+
+        // Definimos el innerHTML del elemento con una plantilla de texto
+        card.innerHTML = `<img src="./img/${producto.img}" alt="${producto.nombre}" style="width: 100%" />
+                                <div class="container">
+                                    <h4><b>${producto.nombre}</b></h4>
+                                    <p>$${producto.precio}</p>
+                                </div>`;
+        document.body.appendChild(card);
+    }
+}
+
+// renderizarProductos();
+renderizarProductos2();
 
 //Eventos
 
@@ -100,43 +142,43 @@ const myInput = document.getElementById('myInput');
 // });
 
 // Evento onchange
-myInput.addEventListener('change', function () {
-    console.log('Evento change evento:', myInput.value);
-});
+// myInput.addEventListener('change', function () {
+//     console.log('Evento change evento:', myInput.value);
+// });
 
 // Evento input cuando se inserta o borran caracteres
-myInput.addEventListener('input', function () {
-    console.log('Evento input: ' + myInput.value);
-});
+// myInput.addEventListener('input', function () {
+//     console.log('Evento input: ' + myInput.value);
+// });
 
 const myForm = document.getElementById('myForm');
 const clientes = [];
 
 // Evento submit
-myForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const nombre = document.getElementById('fname').value;
-    const apellido = document.getElementById('lname').value;
-    const pais = document.getElementById('country').value;
-    const cliente = {};
+// myForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
+//     const nombre = document.getElementById('fname').value;
+//     const apellido = document.getElementById('lname').value;
+//     const pais = document.getElementById('country').value;
+//     const cliente = {};
 
-    // console.log(nombre);
-    // console.log(apellido);
-    // console.log(pais);
-    // console.log(cliente);
+//     console.log(nombre);
+//     console.log(apellido);
+//     console.log(pais);
+//     console.log(cliente);
 
-    cliente['nombre'] = nombre;
-    cliente['apellido'] = apellido;
-    cliente['pais'] = pais;
-    // cliente.nombre = nombre;
-    // cliente.apellido = apellido;
-    // cliente.pais = pais;
+//     cliente['nombre'] = nombre;
+//     cliente['apellido'] = apellido;
+//     cliente['pais'] = pais;
+//     cliente.nombre = nombre;
+//     cliente.apellido = apellido;
+//     cliente.pais = pais;
 
-    clientes.push(cliente);
-    console.log(cliente);
-    console.log(clientes);
+//     clientes.push(cliente);
+//     console.log(cliente);
+//     console.log(clientes);
 
-    myForm.reset();
+//     myForm.reset();
 
-    // console.log('Evento submit.');
-});
+// console.log('Evento submit.');
+// });

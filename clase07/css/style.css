@@ -2,6 +2,34 @@
     background-color: yellow;
 }
 
+/* estilos de los cards productos */
+.card {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card .container {
+    text-align: center;
+}
+
+.card h4 {
+    margin: 10px 0;
+}
+
+.card p {
+    margin: 0;
+}
+
 /* estilos del formulario */
 input[type='text'],
 select {
