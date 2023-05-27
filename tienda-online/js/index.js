@@ -7,6 +7,21 @@ const containerCart = document.querySelector('.modal-body');
 const iconMenu = document.getElementById('icon-menu');
 let productosCarrito = [];
 
+class Producto {
+    constructor(imagen, nombre, precio, id) {
+        this.imagen = imagen;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.id = id;
+        this.cantidad = 1;
+        this.subtotal = 0;
+    }
+
+    obtenerTotal() {
+        this.subtotal = this.precio * this.cantidad;
+    }
+}
+
 cargarEventos();
 
 function cargarEventos() {
@@ -14,14 +29,14 @@ function cargarEventos() {
 
     document.addEventListener('DOMContentLoaded', () => {
         renderizarProductos();
-        console.log(productosCarrito);
+        // console.log(productosCarrito);
         productosCarrito = JSON.parse(localStorage.getItem('productosLS')) || [];
-        console.log(productosCarrito);
+        // console.log(productosCarrito);
         mostrarProductosCarrito();
     });
 
     containerProducts.addEventListener('click', agregarProducto);
-    containerCart.addEventListener('click', eleminarProducto);
+    containerCart.addEventListener('click', eliminarProducto);
 
     carrito.onclick = function () {
         modal.style.display = 'block';
@@ -38,12 +53,12 @@ function cargarEventos() {
     };
 }
 
-function eleminarProducto(e) {
+function eliminarProducto(e) {
     if (e.target.classList.contains('eliminar-producto')) {
-        console.log(e.target);
+        // console.log(e.target);
 
         const productoId = parseInt(e.target.getAttribute('id'));
-        console.log(productoId);
+        // console.log(productoId);
 
         productosCarrito = productosCarrito.filter((producto) => producto.id !== productoId);
         guardarProductosLocalStorage();
@@ -54,7 +69,6 @@ function eleminarProducto(e) {
 
 function agregarProducto(e) {
     e.preventDefault();
-    // console.log(e.target);
 
     if (e.target.classList.contains('agregar-carrito')) {
         const productoAgregado = e.target.parentElement;
@@ -67,17 +81,26 @@ function agregarProducto(e) {
 function leerDatosProducto(producto) {
     // console.log(producto);
 
-    // Creamos un objeto literal
-    const datosProducto = {
-        imagen: producto.querySelector('img').src,
-        nombre: producto.querySelector('h4').textContent,
-        precio: Number(producto.querySelector('p').textContent.replace('$', '')),
-        id: parseInt(producto.querySelector('a').getAttribute('id')),
-        cantidad: 1,
-        subtotal: 0,
-    };
+    // const datosProducto = {
+    //     imagen: producto.querySelector('img').src,
+    //     nombre: producto.querySelector('h4').textContent,
+    //     precio: Number(producto.querySelector('p').textContent.replace('$', '')),
+    //     id: parseInt(producto.querySelector('a').getAttribute('id')),
+    //     cantidad: 1,
+    //     subtotal: 0,
+    // };
 
-    datosProducto.subtotal = datosProducto.precio * datosProducto.cantidad;
+    // datosProducto.subtotal = datosProducto.precio * datosProducto.cantidad;
+
+    // creamos el objeto utilizando la clase Producto
+    const datosProducto = new Producto(
+        producto.querySelector('img').src,
+        producto.querySelector('h4').textContent,
+        Number(producto.querySelector('p').textContent.replace('$', '')),
+        parseInt(producto.querySelector('a').getAttribute('id'))
+    );
+
+    datosProducto.obtenerTotal();
     // console.log(datosProducto);
 
     agregarAlCarrito(datosProducto);
@@ -105,8 +128,7 @@ function agregarAlCarrito(productoAgregar) {
             }
         });
 
-        // productosCarrito = [...productos]; // ... Spread Operator será estudiado en próximas clases
-        productosCarrito = productos; // reasignamos con el array productos devuelto por el metodo "map"
+        productosCarrito = productos; // reasignamos con el array productos devuelto por el metodo
     } else {
         productosCarrito.push(productoAgregar); // agregamos el nuevo producto ya que no se encontraba dentro de productosCarrito
     }
@@ -161,7 +183,7 @@ function renderizarProductos() {
         const divCard = document.createElement('div');
         divCard.classList.add('card');
         divCard.innerHTML += `
-			<img src=./img/${producto.img} alt=${producto.nombre} />
+			<img src="./img/${producto.img}" alt="${producto.nombre}" />
 			<h4>${producto.nombre}</h4>
 			<p>$${producto.precio}</p>
 			<a id=${producto.id} class="boton agregar-carrito" href="#">Agregar</a>
