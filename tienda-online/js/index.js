@@ -29,9 +29,9 @@ function cargarEventos() {
 
     document.addEventListener('DOMContentLoaded', () => {
         renderizarProductos();
-        // console.log(productosCarrito);
+        console.log(productosCarrito);
         productosCarrito = JSON.parse(localStorage.getItem('productosLS')) || [];
-        // console.log(productosCarrito);
+        console.log(productosCarrito);
         mostrarProductosCarrito();
     });
 
@@ -196,9 +196,12 @@ function renderizarProductos() {
 function showMenu() {
     let navbar = document.getElementById('myTopnav');
 
-    if (navbar.className === 'topnav') {
-        navbar.className += ' responsive';
-    } else {
-        navbar.className = 'topnav';
-    }
+    // if (navbar.className === 'topnav') {
+    //     navbar.className += ' responsive';
+    // } else {
+    //     navbar.className = 'topnav';
+    // }
+
+    // realizamos una optimización de la estructura condicional if utilizando un operador ternario
+    navbar.className = navbar.className === 'topnav' ? (navbar.className += ' responsive') : (navbar.className = 'topnav');
 }

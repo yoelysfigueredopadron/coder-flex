@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1234,
+        "nombre": "NOTEBOOK EXO E17",
+        "precio": 58799.0,
+        "stock": 20
+    },
+    {
+        "id": 2345,
+        "nombre": "NOTEBOOK GAMER ASUS 17",
+        "precio": 588999.0,
+        "stock": 32
+    },
+    {
+        "id": 3456,
+        "nombre": "NOTEBOOK ASUS WORKING 14",
+        "precio": 138889.0,
+        "stock": 30
+    },
+    {
+        "id": 4567,
+        "nombre": "MACBOOK AIR 13",
+        "precio": 278500.0,
+        "stock": 26
+    },
+    {
+        "id": 5678,
+        "nombre": "MACBOOK PRO 14",
+        "precio": 448999.0,
+        "stock": 18
+    },
+    {
+        "id": 6789,
+        "nombre": "IPAD AIR 10.1",
+        "precio": 188499.0,
+        "stock": 52
+    }
+]
