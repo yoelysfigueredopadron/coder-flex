@@ -1,3 +1,5 @@
+const url = 'https://raw.githubusercontent.com/yoelysfigueredopadron/JSON/main/productos3.json';
+const file = '../data/productos3.json';
 const containerProducts = document.getElementById('container-products');
 const modal = document.getElementById('ventana-modal');
 const carrito = document.getElementById('carrito');
@@ -178,7 +180,39 @@ function guardarProductosLocalStorage() {
     localStorage.setItem('productosLS', JSON.stringify(productosCarrito));
 }
 
-function renderizarProductos() {
+async function realizarPeticion(datos) {
+    try {
+        const response = await fetch(datos);
+
+        // Comprobar si la respuesta es exitosa (código de estado HTTP en el rango 200-299)
+        if (!response.ok) {
+            throw new Error(`Error en la petición: ${response.status} ${response.statusText}`);
+        }
+
+        // Si la respuesta es exitosa, obtener los datos en formato JSON
+        const data = await response.json();
+
+        // Devolver los datos obtenidos
+        return data;
+    } catch (error) {
+        // Capturar cualquier error ocurrido durante la petición o el procesamiento de los datos
+        console.error(error);
+        // En caso de error, puedes devolver un valor por defecto o lanzar una excepción para manejarla en el código que llama a la función
+        return null;
+    } finally {
+        // Realizar cualquier acción necesaria al finalizar la petición
+        console.log('Petición finalizada');
+    }
+}
+
+async function renderizarProductos() {
+    // Llamar a la función y pasarle la URL de la API que deseas consultar
+    // const productos = await realizarPeticion(url);
+    const productos = await realizarPeticion(file);
+
+    // Utilizar la productos retornada
+    console.log(productos);
+
     productos.forEach((producto) => {
         const divCard = document.createElement('div');
         divCard.classList.add('card');
