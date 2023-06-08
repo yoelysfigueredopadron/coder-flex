@@ -13,6 +13,7 @@ body {
     letter-spacing: 0.03em;
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
+    background-color: beige;
 }
 
 /* estilos barra de navegación */
@@ -76,6 +77,18 @@ body {
     }
 }
 
+.count-products {
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
 .title {
     text-align: center;
     font-size: 40px;
@@ -84,6 +97,41 @@ body {
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
+
+/* #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+} */
+
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input {
+    width: 242px;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+/* .fa-search {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+} */
 
 /* estilos del card */
 .container {
@@ -129,7 +177,8 @@ body {
     margin: 8px auto;
 }
 
-.container .card .boton {
+.container .card .boton,
+.boton-standar {
     font-weight: 500;
     text-decoration: none;
     color: white;
@@ -138,14 +187,15 @@ body {
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 4px;
     transition-duration: 0.4s;
     cursor: pointer;
     border: none;
     border-radius: 8px;
 }
 
-.container .card .boton:hover {
+.container .card .boton:hover,
+.boton-standar:hover {
     background-color: white;
     color: black;
     border: 2px solid #4caf50;
@@ -256,6 +306,11 @@ body {
     color: red;
     transition: 0.5s;
     font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
 }
 
 .eliminar-producto:hover {
@@ -282,4 +337,8 @@ body {
 .boton-carrito:hover {
     background-color: white;
     color: black;
+}
+
+.boton-standar {
+    margin-bottom: 12px;
 }
