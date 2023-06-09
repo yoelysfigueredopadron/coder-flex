@@ -98,17 +98,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* #myInput {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-} */
-
 .search-container {
     position: relative;
     display: flex;
@@ -123,15 +112,6 @@ body {
     border: 1px solid #ddd;
     margin-bottom: 12px;
 }
-
-/* .fa-search {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: #999;
-    pointer-events: none;
-} */
 
 /* estilos del card */
 .container {

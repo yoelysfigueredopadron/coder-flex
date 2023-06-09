@@ -11,6 +11,8 @@ const contenedorProductos = document.querySelector('.contenedor-carrito');
 const cantidadProductos = document.querySelector('.count-products');
 const finalizarCompra = document.querySelector('#finalizar-compra');
 const vaciarCarrito = document.querySelector('#vaciar-carrito');
+const inputFiltar = document.querySelector('#input-filtro');
+const btnFiltro = document.querySelector('#filtro');
 let productosCarrito = [];
 
 const Toast = Swal.mixin({
@@ -54,6 +56,7 @@ function cargarEventos() {
     containerCart.addEventListener('click', eliminarProducto);
     finalizarCompra.addEventListener('click', compraFinalizada);
     vaciarCarrito.addEventListener('click', limpiarCarrito);
+    btnFiltro.addEventListener('click', filtrarProductos);
 
     carrito.onclick = function () {
         modal.style.display = 'block';
@@ -362,12 +365,7 @@ function showMenu() {
     navbar.className = navbar.className === 'topnav' ? (navbar.className += ' responsive') : (navbar.className = 'topnav');
 }
 
-const inputFiltar = document.querySelector('#myInput');
-const btnFiltro = document.querySelector('#filtro');
-
-btnFiltro.addEventListener('click', myFunction);
-
-async function myFunction() {
+async function filtrarProductos() {
     const productos = await realizarPeticion(file);
     let productosFiltrados, filtro;
 
