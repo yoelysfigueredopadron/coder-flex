@@ -104,19 +104,60 @@ function listarProductos() {
 
 btnClick3.addEventListener('click', listarProductos);
 
-const date = new Date();
-console.log(date);
+// Ejemplo con librerías Toastify
 
-// Luxon
-const { DateTime } = luxon;
-const now = DateTime.now();
+// Mostrar una notificación básica
+// Toastify({
+//     text: '¡Hola, coder!',
+//     duration: 3000, // Duración en milisegundos
+// }).showToast();
 
-console.log(now.toString()); // Fecha actual
-console.log(now.year);
-console.log(now.month);
-console.log(now.day);
-console.log(now.hour);
-console.log(now.minute);
-console.log(now.second);
-console.log(now.millisecond);
-console.log(now.weekday);
+// Personalizar el estilo y posición de la notificación
+// Toastify({
+//     text: '¡Éxito!',
+//     style: {
+//         background: 'green', // 'linear-gradient(to right, #00b09b, #96c93d)'
+//     },
+//     position: 'bottom-right',
+// }).showToast();
+
+// Agregar un botón de cierre a la notificación
+// Toastify({
+//     text: 'Haz clic en el botón de cerrar',
+//     close: true,
+// }).showToast();
+
+// Mostrar una notificación con acción y callback
+Toastify({
+    text: "Haz clic en 'Aceptar'",
+    close: true,
+    onClick: function () {
+        console.log('Se hizo clic en la notificación');
+    },
+}).showToast();
+
+// Ejemplo con fechas usando el objeto Date de javascript y la librería luxon
+const dateActual = new Date();
+// console.log(dateActual);
+
+// Crear una instancia de fecha y hora actual
+const now = luxon.DateTime.now();
+// console.log(now.toISO());
+
+// Realizar cálculos con fechas y horas
+const pastDate = luxon.DateTime.fromISO('2023-06-01');
+const duration = luxon.Duration.fromObject({ days: 7 });
+const futureDate = pastDate.plus(duration);
+// console.log(futureDate.toISODate()); // 2023-06-08
+
+// Formatear una fecha y hora en un formato específico
+const date = luxon.DateTime.fromISO('2023-07-05T10:30:00');
+const formattedDate = date.toFormat('dd/MM/yyyy HH:mm:ss');
+// console.log(formattedDate); // 05/07/2023 10:30:00
+
+// Obtener la diferencia entre dos fechas
+const start = luxon.DateTime.fromISO('2023-07-01');
+const end = luxon.DateTime.fromISO('2023-07-05');
+// El método diff devuelve un objeto Duration que representa la duración entre las dos fechas. toObject() convierte el objeto Duration en un objeto de JavaScript que contiene las propiedades de la duración, como días, horas, minutos, segundos, milisegundos.
+const diff = end.diff(start, 'days').toObject();
+// console.log(diff.days); // 4
