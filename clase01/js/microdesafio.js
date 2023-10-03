@@ -15,12 +15,12 @@
 
 // alert('Ingrese un número para sumarlo al valor 90 y mostrar el resultado por alert() y consola.');
 
-// // ingresamos un valor para numero5 por prompt()
-// // numero5 = parseInt(prompt('Ingrese un número:')); // parseInt parsea una cadena a un valor númerico entero
-// // numero5 = parseFloat(prompt('Ingrese un número:')); // parseFloat parsea una cadena a un valor númerico decimal
+// ingresamos un valor para numero5 por prompt()
+// numero5 = parseInt(prompt('Ingrese un número:')); // parseInt parsea una cadena a un valor númerico entero
+// numero5 = parseFloat(prompt('Ingrese un número:')); // parseFloat parsea una cadena a un valor númerico decimal
 // numero5 = Number(prompt('Ingrese un número:')); // Number parsea una cadena a un valor númerico decimal o entero según corresponda
 
-// // sumamos el valor de numero4 y nummero5
+// sumamos el valor de numero4 y nummero5
 // resultado = numero4 + numero5;
 
 // alert('El resultado de la suma es: ' + resultado);

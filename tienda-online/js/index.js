@@ -101,7 +101,7 @@ function compraFinalizada() {
 }
 
 function limpiarCarrito() {
-    console.log('vaciando carrito');
+    // console.log('vaciando carrito');
 
     Swal.fire({
         title: 'Limpiar carrito',
@@ -230,7 +230,7 @@ function agregarAlCarrito(productoAgregar) {
     }
 
     guardarProductosLocalStorage();
-    // console.log(productosCarrito);
+    console.log(productosCarrito);
     mostrarProductosCarrito();
 }
 

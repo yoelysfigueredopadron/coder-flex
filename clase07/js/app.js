@@ -1,93 +1,93 @@
-// DOM
+// // DOM
 
-// Obtener el elemento por su ID y cambiar su contenido
-let tituloElemento = document.getElementById('titulo');
-// console.log(tituloElemento);
-// tituloElemento.innerHTML = 'Nuevo Título';
+// // Obtener el elemento por su ID y cambiar su contenido
+// let tituloElemento = document.getElementById('titulo');
+// // console.log(tituloElemento);
+// // tituloElemento.innerHTML = 'Nuevo Título';
 
-// Obtener elementos por su clase y cambiar su contenido
-let parrafosElemento = document.getElementsByClassName('parrafo');
-// console.log(parrafosElemento);
-for (let i = 0; i < parrafosElemento.length; i++) {
-    parrafosElemento[i].innerHTML = 'Nuevo párrafo';
-}
+// // Obtener elementos por su clase y cambiar su contenido
+// let parrafosElemento = document.getElementsByClassName('parrafo');
+// // console.log(parrafosElemento);
+// for (let i = 0; i < parrafosElemento.length; i++) {
+//     parrafosElemento[i].innerHTML = 'Nuevo párrafo';
+// }
 
-// Obtener elementos por su etiqueta y cambiar su contenido
-let elementosLista = document.getElementsByTagName('li');
-// console.log(elementosLista);
-for (let i = 0; i < elementosLista.length; i++) {
-    elementosLista[i].innerText = 'Elemento ' + (i + 1) + ' modificado';
-    // elementosLista[i].innerText = `Elemento ${i + 1} modificado`;
-}
+// // Obtener elementos por su etiqueta y cambiar su contenido
+// let elementosLista = document.getElementsByTagName('li');
+// // console.log(elementosLista);
+// for (let i = 0; i < elementosLista.length; i++) {
+//     elementosLista[i].innerText = 'Elemento ' + (i + 1) + ' modificado';
+//     // elementosLista[i].innerText = `Elemento ${i + 1} modificado`;
+// }
 
-// Añadir una clase a un elemento
-// tituloElemento.className = 'highlight';
+// // Añadir una clase a un elemento
+// // tituloElemento.className = 'highlight';
 
-// Crear un nuevo elemento y agregarlo al DOM
-let nuevoElemento = document.createElement('p');
-// nuevoElemento.classList.add('nuevo-estilo-parrafo');
-nuevoElemento.classList.add('nuevo', 'estilo', 'parrafo');
-nuevoElemento.classList.remove('nuevo');
-nuevoElemento.classList.remove('estilo');
-nuevoElemento.innerText = 'Nuevo elemento creado';
+// // Crear un nuevo elemento y agregarlo al DOM
+// let nuevoElemento = document.createElement('p');
+// // nuevoElemento.classList.add('nuevo-estilo-parrafo');
+// nuevoElemento.classList.add('nuevo', 'estilo', 'parrafo');
+// nuevoElemento.classList.remove('nuevo');
+// nuevoElemento.classList.remove('estilo');
+// nuevoElemento.innerText = 'Nuevo elemento creado';
 
-// appendChild() se usa para agregar un solo nodo hijo al final de la lista de hijos de un nodo específico.
-// document.body.appendChild(nuevoElemento);
+// // appendChild() se usa para agregar un solo nodo hijo al final de la lista de hijos de un nodo específico.
+// // document.body.appendChild(nuevoElemento);
 
-// append() se usa para agregar uno o varios nodos al final del objeto en el que se llama.
-// document.body.append(nuevoElemento);
+// // append() se usa para agregar uno o varios nodos al final del objeto en el que se llama.
+// // document.body.append(nuevoElemento);
 
-// Insertar el nuevo elemento al inicio del elemento padre
-// document.body.insertBefore(nuevoElemento, document.body.firstChild);
+// // Insertar el nuevo elemento al inicio del elemento padre
+// // document.body.insertBefore(nuevoElemento, document.body.firstChild);
 
-// Seleccionar elementos con querySelector y querySelectorAll
-let primerParrafo = document.querySelector('.parrafo');
-let todosLosParrafos = document.querySelectorAll('p');
+// // Seleccionar elementos con querySelector y querySelectorAll
+// let primerParrafo = document.querySelector('.parrafo');
+// let todosLosParrafos = document.querySelectorAll('p');
 
-// console.log(primerParrafo);
-// console.log(todosLosParrafos);
+// // console.log(primerParrafo);
+// // console.log(todosLosParrafos);
 
-// Creando elementos desde objetos
-const productos = [
-    { id: 1, nombre: 'Arroz', precio: 125, img: 'arroz.jpg' },
-    { id: 2, nombre: 'Fideo', precio: 70, img: 'fideos.jpg' },
-    { id: 3, nombre: 'Pan', precio: 50, img: 'pan.jpg' },
-    { id: 4, nombre: 'Flan', precio: 100, img: 'flan.jpg' },
-];
+// // Creando elementos desde objetos
+// const productos = [
+//     { id: 1, nombre: 'Arroz', precio: 125, img: 'arroz.jpg' },
+//     { id: 2, nombre: 'Fideo', precio: 70, img: 'fideos.jpg' },
+//     { id: 3, nombre: 'Pan', precio: 50, img: 'pan.jpg' },
+//     { id: 4, nombre: 'Flan', precio: 100, img: 'flan.jpg' },
+// ];
 
-console.log(productos);
+// console.log(productos);
 
-function renderizarProductos() {
-    let listaProductos = document.createElement('ol'); // div
+// function renderizarProductos() {
+//     let listaProductos = document.createElement('ol'); // div
 
-    for (const producto of productos) {
-        let objProducto = document.createElement('li'); // p
-        // objProducto.innerHTML = JSON.stringify(producto);
-        objProducto.innerHTML = `ID: ${producto.id} | Nombre: ${producto.nombre} | Precio: $${producto.precio}`;
-        listaProductos.append(objProducto);
-    }
+//     for (const producto of productos) {
+//         let objProducto = document.createElement('li'); // p
+//         // objProducto.innerHTML = JSON.stringify(producto);
+//         objProducto.innerHTML = `ID: ${producto.id} | Nombre: ${producto.nombre} | Precio: $${producto.precio}`;
+//         listaProductos.append(objProducto);
+//     }
 
-    // alert(JSON.stringify(productos));
-    document.body.append(listaProductos);
-}
+//     // alert(JSON.stringify(productos));
+//     document.body.append(listaProductos);
+// }
 
-function renderizarProductos2() {
-    for (const producto of productos) {
-        let card = document.createElement('div');
-        card.classList.add('card');
+// function renderizarProductos2() {
+//     for (const producto of productos) {
+//         let card = document.createElement('div');
+//         card.classList.add('card');
 
-        // Definimos el innerHTML del elemento con una plantilla de texto
-        card.innerHTML = `<img src="./img/${producto.img}" alt="${producto.nombre}" style="width: 100%" />
-                                <div class="container">
-                                    <h4><b>${producto.nombre}</b></h4>
-                                    <p>$${producto.precio}</p>
-                                </div>`;
-        document.body.appendChild(card);
-    }
-}
+//         // Definimos el innerHTML del elemento con una plantilla de texto
+//         card.innerHTML = `<img src="./img/${producto.img}" alt="${producto.nombre}" style="width: 100%" />
+//                                 <div class="container">
+//                                     <h4><b>${producto.nombre}</b></h4>
+//                                     <p>$${producto.precio}</p>
+//                                 </div>`;
+//         document.body.appendChild(card);
+//     }
+// }
 
-// renderizarProductos();
-renderizarProductos2();
+// // renderizarProductos();
+// renderizarProductos2();
 
 //Eventos
 

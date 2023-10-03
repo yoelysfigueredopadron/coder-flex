@@ -25,3 +25,18 @@ resultadoMultiplicacion = numero2 * numero3;
 // let mascota = confirm('¿Tiene mascotas?');
 
 // console.log('Mascota: ' + mascota);
+
+// algoritmo sencillo:
+// Declaración de variables
+let nombre2 = 'Juan';
+let edad2 = 25;
+let esMayorDeEdad = edad2 >= 18;
+
+// Operaciones aritméticas y de concatenación
+let mensaje = 'Hola, ' + nombre2 + '. ';
+let mensaje2 = 'Tienes ' + edad2 + ' años. ';
+let mensaje3 = '¿Eres mayor de edad? ' + esMayorDeEdad;
+
+let unirMensajes = mensaje + mensaje2 + mensaje3;
+
+console.log(unirMensajes);
