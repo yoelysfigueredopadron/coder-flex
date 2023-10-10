@@ -74,7 +74,7 @@
 // let anioActual = 2023;
 // let anioDeNacimiento = prompt('¿En qué año naciste?');
 
-// // Calculamos la cantidad de Copas Mundiales que ha vivido la persona
+// Calculamos la cantidad de Copas Mundiales que ha vivido la persona
 // let cantidadDeCopas = parseInt((anioActual - anioDeNacimiento) / 4);
 
 // alert('Has vivido ' + cantidadDeCopas + ' Copas Mundiales desde que naciste hasta el ' + anioActual + '.');
@@ -93,7 +93,7 @@
 // let numero = Number(prompt('Ingrese un número'));
 // let suma = 0;
 
-// // se agregar al valor de suma el numero ingresado 5 veces
+// se agregar al valor de suma el numero ingresado 5 veces
 // for (let i = 1; i <= 5; i++) {
 // 	suma = suma + numero;
 // 	console.log(suma);
@@ -104,7 +104,7 @@
 // let mensajeAMostrar = '';
 
 // while (texto != 'esc') {
-// 	// agregamos un espacio después de la nueva palabra y la asignamos en la variable mensajeAMostrar
+// agregamos un espacio después de la nueva palabra y la asignamos en la variable mensajeAMostrar
 // 	mensajeAMostrar += texto + ' ';
 // 	console.log(mensajeAMostrar);
 
