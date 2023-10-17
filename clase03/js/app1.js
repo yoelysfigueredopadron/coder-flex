@@ -134,21 +134,21 @@
 // console.log(multiplicar(6, 6));
 
 // calcular precio con descuento usando arrow functions
-const sumar = (a, b) => a + b;
-const restar = (a, b) => a - b;
-const iva = (x) => x * 0.21;
+// const sumar = (a, b) => a + b;
+// const restar = (a, b) => a - b;
+// const iva = (x) => x * 0.21;
 
-let precioProducto = 500,
-    descuento = 50,
-    precioDescuento;
+// let precioProducto = 500,
+//     descuento = 50,
+//     precioDescuento;
 
-console.log(iva(500)); // iva sobre el precio del Producto
-console.log(sumar(precioProducto, iva(precioProducto))); // precio con iva
-console.log(restar(sumar(precioProducto, iva(precioProducto)), descuento)); // precio final (precio con iva - descuento)
+// console.log(iva(500)); // iva sobre el precio del Producto
+// console.log(sumar(precioProducto, iva(precioProducto))); // precio con iva
+// console.log(restar(sumar(precioProducto, iva(precioProducto)), descuento)); // precio final (precio con iva - descuento)
 
-precioDescuento = restar(sumar(precioProducto, iva(precioProducto)), descuento);
-console.log('El precio final es $', precioDescuento);
-console.log('El precio final es $' + precioDescuento);
+// precioDescuento = restar(sumar(precioProducto, iva(precioProducto)), descuento);
+// console.log('El precio final es $', precioDescuento);
+// console.log('El precio final es $' + precioDescuento);
 
 // Find The Bug
 
@@ -173,3 +173,25 @@ console.log('El precio final es $' + precioDescuento);
 
 // let valorPoliza = calcularPoliza(M2);
 // console.log('El costo de la póliza es: $', valorPoliza.toFixed(2));
+
+// porque var es una mala practica
+// function ejemploVar() {
+//     var x = 1;
+//     if (true) {
+//         var x = 2; // Mismo x
+//         console.log(x); // 2
+//     }
+//     console.log(x); // 2
+// }
+
+// function ejemploLet() {
+//     let y = 1;
+//     if (true) {
+//         let y = 2; // Diferente y
+//         console.log(y); // 2
+//     }
+//     console.log(y); // 1
+// }
+
+// ejemploVar();
+// ejemploLet();
