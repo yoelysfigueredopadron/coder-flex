@@ -12,17 +12,17 @@
 // Declaración de variable para guardar el resultado de la suma
 // let resultado = 0;
 
-// // Función que suma dos números y asigna a resultado
+// Función que suma dos números y asigna a resultado
 // function sumar(primerNumero, segundoNumero) {
 // 	resultado = primerNumero + segundoNumero;
 // }
 
-// //Función que muestra resultado por consola
-function mostrar(mensaje) {
-	console.log(mensaje);
-}
+//Función que muestra resultado por consola
+// function mostrar(mensaje) {
+//     console.log(mensaje);
+// }
 
-// //Llamamos primero a sumar y luego a mostrar
+//Llamamos primero a sumar y luego a mostrar
 // sumar(6, 3);
 // mostrar(resultado);
 
@@ -56,28 +56,28 @@ function mostrar(mensaje) {
 // mostrar(resultado3);
 
 // En este ejemplo si pueden usar break porque no usamos el return de la función
-let resultado4;
+// let resultado4;
 
-function calculadora(primerNumero, segundoNumero, operacion) {
-	switch (operacion) {
-		case '+':
-			resultado4 = primerNumero + segundoNumero;
-			break;
-		case '-':
-			resultado4 = primerNumero - segundoNumero;
-			break;
-		case '*':
-			resultado4 = primerNumero * segundoNumero;
-			break;
-		case '/':
-			resultado4 = primerNumero / segundoNumero;
-			break;
-		default:
-			resultado4 = 0;
-	}
-}
+// function calculadora(primerNumero, segundoNumero, operacion) {
+//     switch (operacion) {
+//         case '+':
+//             resultado4 = primerNumero + segundoNumero;
+//             break;
+//         case '-':
+//             resultado4 = primerNumero - segundoNumero;
+//             break;
+//         case '*':
+//             resultado4 = primerNumero * segundoNumero;
+//             break;
+//         case '/':
+//             resultado4 = primerNumero / segundoNumero;
+//             break;
+//         default:
+//             resultado4 = 0;
+//     }
+// }
 
-// calculadora(5, 5, '*');
+// calculadora(5, 5, '+');
 // mostrar(resultado4);
 // calculadora(5, 5, '-');
 // mostrar(resultado4);
@@ -95,7 +95,7 @@ function calculadora(primerNumero, segundoNumero, operacion) {
 
 // sumar(5, 6);
 
-// //Se puede acceder a la variable resultado porque es global
+//Se puede acceder a la variable resultado porque es global
 // mostrar(resultado5);
 
 // function sumar(primerNumero, segundoNumero) {
@@ -104,19 +104,19 @@ function calculadora(primerNumero, segundoNumero, operacion) {
 
 // sumar(5, 6);
 
-// //No se puede acceder a la variable resultado fuera del bloque
+//No se puede acceder a la variable resultado fuera del bloque
 // console.error(resultado); // Uncaught ReferenceError: resultado is not defined
 
 // scope local
-function sumar(num1, num2) {
-	let resultado = num1 + num2;
-	return resultado;
-}
+// function sumar(num1, num2) {
+//     let resultado = num1 + num2;
+//     return resultado;
+// }
 
-function restar(num1, num2) {
-	let resultado = num1 - num2;
-	return resultado;
-}
+// function restar(num1, num2) {
+//     let resultado = num1 - num2;
+//     return resultado;
+// }
 
-mostrar('Sumar: ' + sumar(8, 8));
-mostrar('Restar: ' + restar(8, 8));
+// mostrar('Sumar: ' + sumar(8, 8));
+// mostrar('Restar: ' + restar(8, 8));
