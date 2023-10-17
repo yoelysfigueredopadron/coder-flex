@@ -1,4 +1,4 @@
-// Ejemplo de función
+// Ejemplos de funciones
 // function solicitarNombre() {
 // 	let nombreIngresado = prompt('Ingresar nombre');
 // 	alert('El nombre ingresado es ' + nombreIngresado);
