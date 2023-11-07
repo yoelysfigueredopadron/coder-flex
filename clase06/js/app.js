@@ -17,6 +17,10 @@ const hamburguesa = {
 
 localStorage.setItem('hamburguesa', JSON.stringify(hamburguesa));
 
+// recuperamos la key en formato string
+// const miHamburguesa = localStorage.getItem('hamburguesa');
+
+// JSON.parse convertimos de formato JSON a objeto
 const miHamburguesa = JSON.parse(localStorage.getItem('hamburguesa'));
 
 // console.log(miHamburguesa);
@@ -46,6 +50,10 @@ const hamburguesas = [
 
 localStorage.setItem('hamburguesas', JSON.stringify(hamburguesas));
 
+// recuperamos la key en formato string
+// const misHamburguesas = localStorage.getItem('hamburguesas');
+
+// JSON.parse convertimos de formato JSON a objeto
 const misHamburguesas = JSON.parse(localStorage.getItem('hamburguesas'));
 
 // console.log(misHamburguesas);
@@ -109,10 +117,10 @@ const cursos = [
 
 // forEach se utiliza para ejecutar una función en cada elemento del arreglo
 // cursos.forEach((element) => {
-//     // element.precio = element.precio * 1.21;
-//     // console.log(element);
-//     // console.log(element.nombre);
-//     console.log(element.precio);
+// element.precio = element.precio * 1.21;
+// console.log(element);
+// console.log(element.nombre);
+// console.log(element.precio);
 // });
 
 // find  Devuelve el valor del primer elemento que cumple con la condición o undefined si ningún elemento cumple con la misma.
@@ -215,4 +223,17 @@ cursos2.forEach((curso) => {
     grupos[rangoPrecio].push(curso);
 });
 
-// console.log(grupos);
+console.log(grupos);
+
+// microdesafios
+// const numeros = [3, 9, 5, 2, 8, 7];
+// const tieneNumeroPar = numeros.find((num) => num % 2 === 0);
+// console.log(tieneNumeroPar);
+
+// const nombres = ['Ana', 'Juan', 'María', 'Luisa', 'Pedro', 'Pablo'];
+// const nombresLargos = nombres.filter((nombre) => nombre.length > 5);
+// console.log(nombresLargos);
+
+// const fahrenheitTemps = [32, 68, 86, 104, 212];
+// const celsiusTemps = fahrenheitTemps.map((fahrenheit) => ((fahrenheit - 32) * 5) / 9);
+// console.log(celsiusTemps);
