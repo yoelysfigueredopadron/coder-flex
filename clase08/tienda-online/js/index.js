@@ -61,10 +61,6 @@ function cargarCarritoLocalStorage() {
     productosCarrito = JSON.parse(localStorage.getItem('productosLS')) || [];
 }
 
-function eliminarCarritoLS() {
-    localStorage.removeItem('productosLS');
-}
-
 function eliminarProducto(e) {
     if (e.target.classList.contains('eliminar-producto')) {
         // console.log(e.target);
