@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="./css/estilos.css" />
+		<title>BebidasNow</title>
+	</head>
+	<body>
+		<div class="navigation-bar" id="navigation-bar">
+			<a href="#home" class="active">Home</a>
+			<a href="#contact">Contacto</a>
+			<a href="#about">Nosotros</a>
+			<a href="#cart" id="carrito">
+				<div class="contenedor-carrito">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<div id="productos-carrito" class="count-products">0</div>
+				</div>
+			</a>
+			<a href="javascript:void(0);" id="icon-menu" class="icon">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+		<h1 class="title">Tienda Ecommerce</h1>
+		<div class="search-container">
+			<input type="text" class="search-input" id="input-filtro" placeholder="Buscar por nombre de producto ..." />
+			<button id="filtro" class="boton-standar">Filtrar</button>
+		</div>
+
+		<!-- The Modal -->
+		<div id="ventana-modal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Carrito de compras</h2>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<h3 id="total"></h3>
+					<a id="finalizar-compra" class="boton-carrito" href="#">finalizar</a>
+					<a id="vaciar-carrito" class="boton-carrito" href="#">vaciar</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="container-products" class="container"></div>
+
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
+		<!-- <script src="./js/productos.js"></script> -->
+		<script src="./js/index.js"></script>
+	</body>
+</html>
