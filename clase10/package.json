@@ -1,0 +1,16 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "Aprendiendo NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mi-Nombre",
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^3.4.4",
+    "sweetalert": "^2.1.2",
+    "toastify-js": "^1.12.0"
+  }
+}
